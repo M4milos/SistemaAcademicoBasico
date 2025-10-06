@@ -35,4 +35,11 @@ public class Disciplina {
     public void AdicionarProfessor(Professor professor){
         this.professores.add(professor);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Disciplina [descricao=").append(descricao).append("]");
+        return sb.toString();
+    }
 }

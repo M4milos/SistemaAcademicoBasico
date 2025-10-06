@@ -4,6 +4,7 @@ import java.util.List;
 public class Curso {
     private String descricao;
     private List<Fase> fases = new ArrayList<>();
+    private List<OfertaDisciplina> ofertas = new ArrayList<>();
 
     public Curso(String descricao) {
         setDescricao(descricao);
@@ -31,7 +32,21 @@ public class Curso {
             this.fases = fases;
     }
 
+    public List<OfertaDisciplina> getOfertas() {
+        return ofertas;
+    }
+
+    public void setOfertas(List<OfertaDisciplina> ofertas) {
+        if(ofertas != null)
+            this.ofertas = ofertas;
+    }
+
     public void AdicionarFase(Fase fase){
         this.fases.add(fase);
+    }
+
+    public void ofertarDisciplina(Disciplina disciplina, String periodo) {
+        OfertaDisciplina oferta = new OfertaDisciplina(disciplina, periodo);
+        ofertas.add(oferta);
     }
 }
